@@ -1,11 +1,22 @@
 #!/bin/bash
 
-sudo add-apt-repository ppa:webupd8team/java
-sudo apt-get update
-sudo apt-get install oracle-java7-installer -y
+##
+## install java on ubuntu system
+## 
+## rz 1/20/2014
+##
 
-echo 
-echo "INFO: Testing Java Installation"
+if ! which java ; then
+  sudo add-apt-repository ppa:webupd8team/java
+  sudo apt-get update
+  sudo apt-get install oracle-java7-installer -y
+fi
+
+echo "=====INFO: Testing Java Installation"
 java -version
 
-[ #? -eq 0 ] && echo "INFO: Java installed succesfully" || echo "ERROR: Java installation failed"
+if [ $? -eq 0 ]; then
+  echo "=====INFO: Java installed succesfully" 
+else
+  echo "=====ERROR: Java installation failed"
+fi
