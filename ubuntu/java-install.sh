@@ -5,7 +5,14 @@ sudo apt-get update
 sudo apt-get install oracle-java7-installer -y
 
 echo 
-echo "testing"
+echo "INFO: Testing Java Installation"
 java -version
+
+if [ #? -eq 0 ]; then 
+  echo "Java installed succesfully"
+else
+  echo "Java installation failed"
+fi
 echo
+
 
