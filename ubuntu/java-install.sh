@@ -8,11 +8,4 @@ echo
 echo "INFO: Testing Java Installation"
 java -version
 
-if [ #? -eq 0 ]; then 
-  echo "Java installed succesfully"
-else
-  echo "Java installation failed"
-fi
-echo
-
-
+[ #? -eq 0 ] && echo "INFO: Java installed succesfully" || echo "ERROR: Java installation failed"
